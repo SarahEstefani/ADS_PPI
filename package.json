@@ -1,0 +1,31 @@
+{
+  "name": "ads_ppi",
+  "version": "1.0.0",
+  "description": "Tabuada PPI",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "eslint": "eslint ./", 
+    "eslint-fix": "eslint ./ --fix",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SarahEstefani/ADS_PPI.git"
+  },
+  "keywords": [
+    "tabuada",
+    "matematica"
+  ],
+  "author": "Sarah Estefani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SarahEstefani/ADS_PPI/issues"
+  },
+  "homepage": "https://github.com/SarahEstefani/ADS_PPI#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
