@@ -1,12 +1,11 @@
 import express from 'express';
-const express = require('express');
 const app = express();
 const host = '0.0.0.0'; 
-const porta = 4000; 
+const porta = 2000; 
 function gerarPaginaTabuada(requisicao, resposta) {
     try{
-     const numero = Number(requisicao.query.tabuada);  
-     let respostadamultiplicao = `
+     const numero = Number(requisicao.query.numero);  
+     var respostadamultiplicao = `
         <!DOCTYPE html>	
             <head>
                 <meta charset="UTF-8">
@@ -20,13 +19,13 @@ function gerarPaginaTabuada(requisicao, resposta) {
       const linha = `<li>${numero} x ${i} = ${numero*i}</li>`;
       respostadamultiplicao += linha;
     }
-      respostadamultiplicação+=`
+      respostadamultiplicacao+=`
                 </p>
             </body>
         </html>
     `;
     respostadamultiplicao += '</ul>'
-    resposta.end(conteudoResposta);
+    resposta.end(respostadamultiplicacao);
     
     } catch (erro) {
         resposta.end(`
@@ -37,9 +36,8 @@ function gerarPaginaTabuada(requisicao, resposta) {
                 <title>Erro ao processar a potência de um número</title>
             </head>
             <body>
-                <h1>Não foi possível processar a sua requisição</h1>
-                <h2>Erro ao tentar gerar os resultados</h2>
-                <h2>Na barra de endereços digite por exemplo http://localhost:4000/tabuada?tabuada=2</h2>
+                <h2>Erro ao acessar a TABUADA</h2>
+                <h2>Para garantir seu acesso digite: http://localhost:2000/tabuada?numero=2</h2>
                 <h3>${erro.message}</h3> 
             </body>
         </html>
